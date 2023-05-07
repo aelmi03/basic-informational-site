@@ -11,6 +11,13 @@ const server = http.createServer((req, res) => {
         res.write(htmlFile);
         res.end();
     }
+    else if(req.url == '/about'){
+        res.statusCode = 200;
+        res.setHeader('Content-Type' , 'text/html');
+        const htmlFile = fs.readFileSync('./about.html');
+        res.write(htmlFile);
+        res.end();
+    }
 });
 
 server.listen(port, hostname, () => {
