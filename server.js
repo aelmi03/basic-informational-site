@@ -18,6 +18,13 @@ const server = http.createServer((req, res) => {
         res.write(htmlFile);
         res.end();
     }
+    else if(req.url == '/contact'){
+        res.statusCode = 200;
+        res.setHeader('Content-Type' , 'text/html');
+        const htmlFile = fs.readFileSync('./contact.html');
+        res.write(htmlFile);
+        res.end();
+    }
 });
 
 server.listen(port, hostname, () => {
