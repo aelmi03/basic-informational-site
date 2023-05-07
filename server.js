@@ -26,7 +26,7 @@ const server = http.createServer((req, res) => {
         res.end();
     }
     else{
-        res.statusCode = '404';
+        res.statusCode = 404;
         res.setHeader('Content-Type' , 'text/html');
         const htmlFile = fs.readFileSync('./404.html');
         res.write(htmlFile);
